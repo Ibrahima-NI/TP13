@@ -6,35 +6,17 @@
     <title>Solutions Innovantes</title>
     <link rel="stylesheet" href="assets/CSS/bootstrap.min.css" />
     <style>
-      /* Section Bannière */
-      .banniere {
-        min-height: 400px; /* même hauteur sur tous les slides */
-        display: flex;
-        align-items: center;
-      }
       .banniere-img {
-        width: 100%;
-        height: 400px; /* fixe une hauteur identique */
-        object-fit: cover; /* recadre automatiquement l’image */
-        border-radius: 10px; /* optionnel pour arrondir */
-      }
-      /* Section Services */
-      .nos-services h3 {
-        font-size: 28px;
-        font-weight: bold;
-      }
-
-      .service-card {
-        border: 1px solid #eee;
-        border-radius: 8px;
-        transition: transform 0.3s ease;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
       }
 
       .service-card:hover {
         transform: translateY(-5px);
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
       }
-      /* --- NAVBAR --- */
+
       .brand-badge {
         display: inline-block;
         background-color: #0d6efd;
@@ -46,163 +28,24 @@
         line-height: 20px;
       }
 
-      .brand-text {
-        color: #ffffff;
-        font-weight: 500;
-        font-size: 16px;
-        margin-left: 8px;
-      }
-
-      .navbar .nav-link {
-        color: rgba(255, 255, 255, 0.85);
-        padding: 8px 12px;
-        font-size: 14px;
-      }
-
-      .navbar .nav-link:hover,
-      .navbar .nav-link.active {
-        color: #ffffff;
-      }
-
-      /* --- BANDE D'ANNONCE --- */
       .promo-alert {
-        background-color: #fff3cd; /* jaune très clair */
+        background-color: #fff3cd;
         border: 1px solid #ffe8a1;
-        color: #2c2c2c;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        font-size: 14px;
-      }
-      /* Image bannière avec coins arrondis */
-      .banniere-img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 12px; /* arrondi */
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* optionnel, pour un effet plus joli */
       }
 
-      /* Ajuste les icônes du carousel */
-      .carousel-control-prev-icon,
-      .carousel-control-next-icon {
-        background-size: 30px 30px;
-        filter: invert(1); /* icônes blanches */
-      }
-
-      .carousel-control-prev,
-      .carousel-control-next {
-        top: 50%;
-        transform: translateY(-50%); /* centré verticalement */
-        width: 40px; /* largeur cliquable */
-      }
-      .badge {
-        font-size: 12px; /* petit texte */
-        padding: 3px 6px; /* petit padding */
-      }
-      /* Section Statistiques */
-      .statistiques {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        background: #1e1e1e; /* même fond que footer */
-        padding: 50px 20px;
-        color: #fff;
-        flex-wrap: wrap;
-      }
-
-      .stat-item {
-        text-align: center;
-        flex: 1;
-        min-width: 200px;
-        margin: 15px;
-      }
-
-      .stat-item h2 {
-        font-size: 2rem;
-        font-weight: bold;
-        margin-bottom: 10px;
-        display: inline-block;
-        padding: 10px 20px;
-        border-radius: 8px;
-        color: #fff;
-      }
-
-      /* Couleurs des stats */
-      .stat-item.blue h2 {
-        background: #1e90ff;
-      }
-      .stat-item.green h2 {
-        background: #28a745;
-      }
-      .stat-item.yellow h2 {
-        background: #ffc107;
-        color: #000;
-      }
-      .stat-item.cyan h2 {
-        background: #17a2b8;
-      }
-      /* FAQ */
-      .faq-box {
-        background: #ffffff;
-        border: 1px solid #e5e5e5;
-        border-radius: 8px;
-        padding: 20px;
-        margin-bottom: 15px;
-        transition: all 0.3s ease;
-      }
       .faq-box:hover {
         border-color: #0d6efd;
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
       }
-      .faq-box h6 {
-        font-weight: bold;
-        margin-bottom: 8px;
-        color: #0d6efd;
-      }
-      .faq-box p {
-        margin: 0;
-        font-size: 14px;
-        color: #555;
-      }
-
-      /* Footer */
-      .footer {
-        background: #1e1e1e; /* même fond que statistiques */
-        color: #ccc;
-        padding: 20px 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-
-      .footer-left {
-        font-size: 14px;
-      }
-
-      .footer-right a {
-        color: #ccc;
-        text-decoration: none;
-        margin-left: 15px;
-        font-size: 14px;
-      }
-
-      .footer-right a:hover {
-        text-decoration: underline;
-      }
-      .footer-right .foot {
-        border: 2px solid white;
-        border-radius: 5px;
-      }
     </style>
   </head>
   <body>
-    <!-- ----------------------------------------------------------------------------------------------------- -->
     <!-- NAVBAR -->
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg py-2">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="#">
           <span class="brand-badge">Tech</span>
-          <span class="brand-text">Solutions</span>
+          <span class="text-white fw-medium ms-2">Solutions</span>
         </a>
 
         <button
@@ -236,16 +79,16 @@
       </div>
     </nav>
 
-    <!-- ------------------------------------------ALERTE----------------------------------------------------------- -->
+    <!-- ALERTE -->
     <div
-      class="alert alert-warning alert-dismissible fade show promo-alert mb-0"
+      class="alert alert-warning alert-dismissible fade show mb-0"
       role="alert"
     >
       <div class="container d-flex align-items-center">
-        <span class="me-2"
-          >🎉 <strong>Offre spéciale !</strong> Profitez de -20% sur tous nos
-          services jusqu’à la fin du mois.</span
-        >
+        <span class="me-2">
+          🎉 <strong>Offre spéciale !</strong> Profitez de -20% sur tous nos
+          services jusqu'à la fin du mois.
+        </span>
         <button
           type="button"
           class="btn-close ms-auto"
@@ -254,6 +97,7 @@
         ></button>
       </div>
     </div>
+
     <!-- Bannière en carousel -->
     <section
       id="carouselBanniere"
@@ -263,22 +107,18 @@
       <div class="carousel-inner">
         <!-- Slide 1 -->
         <div class="carousel-item active">
-          <div class="banniere py-5" style="background-color: #007bff">
+          <div class="py-5 bg-primary">
             <div class="container">
               <div class="row align-items-center">
-                <!-- Texte -->
                 <div class="col-12 col-md-6 text-center text-md-start">
-                  <h2 class="titre-banniere text-white">
-                    Solutions Innovantes
-                  </h2>
-                  <p class="sous-titre text-white">
+                  <h2 class="text-white">Solutions Innovantes</h2>
+                  <p class="text-white">
                     Transformez votre entreprise avec nos technologies de pointe
                   </p>
                   <a href="#" class="btn btn-light btn-lg mt-3"
                     >Découvrir nos services</a
                   >
                 </div>
-                <!-- Image -->
                 <div class="col-12 col-md-6 text-center mt-4 mt-md-0">
                   <img
                     src="assets/images/bannier.webp"
@@ -293,13 +133,13 @@
 
         <!-- Slide 2 -->
         <div class="carousel-item">
-          <div class="banniere py-5" style="background-color: #28a745">
+          <div class="py-5 bg-success">
             <div class="container">
               <div class="row align-items-center">
                 <div class="col-12 col-md-6 text-center text-md-start">
-                  <h2 class="titre-banniere text-white">Expertise Confirmé</h2>
-                  <p class="sous-titre text-white">
-                    Plus de 10ans d'experience dans le devellopement web
+                  <h2 class="text-white">Expertise Confirmé</h2>
+                  <p class="text-white">
+                    Plus de 10 ans d'expérience dans le développement web
                   </p>
                   <a href="#" class="btn btn-light btn-lg mt-3"
                     >Voir nos réalisations</a
@@ -319,13 +159,13 @@
 
         <!-- Slide 3 -->
         <div class="carousel-item">
-          <div class="banniere py-5" style="background-color: #17a2b8">
+          <div class="py-5 bg-info">
             <div class="container">
               <div class="row align-items-center">
                 <div class="col-12 col-md-6 text-center text-md-start">
-                  <h2 class="titre-banniere text-white">Support 24/7</h2>
-                  <p class="sous-titre text-white">
-                    Une equipe dedié pour vous accompagner à tout moment
+                  <h2 class="text-white">Support 24/7</h2>
+                  <p class="text-white">
+                    Une équipe dédiée pour vous accompagner à tout moment
                   </p>
                   <a href="#" class="btn btn-light btn-lg mt-3"
                     >Nous contacter</a
@@ -381,38 +221,19 @@
           data-bs-slide-to="2"
         ></button>
       </div>
-
-      <!-- Controls -->
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselBanniere"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselBanniere"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon"></span>
-      </button>
     </section>
-    <!-- ----------------------------------------------------------------------------------------------------- -->
+
     <!-- Section Nos Services -->
-    <section class="nos-services py-5">
+    <section id="services" class="py-5">
       <div class="container text-center">
         <h3 class="mb-4">Nos Services</h3>
         <p class="text-muted mb-5">Des solutions adaptées à vos besoins</p>
         <div class="row">
           <!-- Développement Web -->
-          <div class="col-12 col-md-4">
-            <div class="card service-card h-100 p-3">
+          <div class="col-12 col-md-4 mb-4">
+            <div class="card h-100 p-3 border">
               <h5 class="mb-2">
-                <span class="badge bg-primary text-light me-2">Web</span
-                >Développement Web
+                <span class="badge bg-primary me-2">Web</span>Développement Web
               </h5>
               <p>
                 Sites web modernes et responsive avec les dernières technologies
@@ -427,15 +248,15 @@
                   aria-valuemax="100"
                 ></div>
               </div>
-              <small>Expertise : 95%</small>
+              <small class="mt-2 d-block">Expertise : 95%</small>
             </div>
           </div>
 
           <!-- Applications Mobile -->
-          <div class="col-12 col-md-4">
-            <div class="card service-card h-100 p-3">
+          <div class="col-12 col-md-4 mb-4">
+            <div class="card h-100 p-3 border">
               <h5 class="mb-2">
-                <span class="badge bg-success text-light me-2">Mobile</span>
+                <span class="badge bg-success me-2">Mobile</span>
                 Applications Mobile
               </h5>
               <p>Applications iOS et Android performantes et intuitives</p>
@@ -449,15 +270,15 @@
                   aria-valuemax="100"
                 ></div>
               </div>
-              <small>Expertise : 88%</small>
+              <small class="mt-2 d-block">Expertise : 88%</small>
             </div>
           </div>
 
           <!-- Solutions Cloud -->
-          <div class="col-12 col-md-4">
-            <div class="card service-card h-100 p-3">
+          <div class="col-12 col-md-4 mb-4">
+            <div class="card h-100 p-3 border">
               <h5 class="mb-2">
-                <span class="badge bg-warning text-light me-2">Cloud</span>
+                <span class="badge bg-warning me-2">Cloud</span>
                 Solutions Cloud
               </h5>
               <p>Infrastructure cloud sécurisée et scalable</p>
@@ -471,13 +292,13 @@
                   aria-valuemax="100"
                 ></div>
               </div>
-              <small>Expertise : 92%</small>
+              <small class="mt-2 d-block">Expertise : 92%</small>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- ----------------------------------------------------------------------------------------------------- -->
+
     <!-- Section Nos Réalisations -->
     <section id="projets" class="py-5 bg-light">
       <div class="container">
@@ -489,7 +310,7 @@
         <div class="row g-4">
           <!-- Projet 1 -->
           <div class="col-12 col-md-4">
-            <div class="card projet-card h-100">
+            <div class="card h-100">
               <img
                 src="assets/images/bannier.webp"
                 class="card-img-top"
@@ -497,13 +318,14 @@
               />
               <div class="card-body">
                 <h5 class="card-title">
-                  Boutique en ligne ModaFashion<span class="badge bg-success"
+                  Boutique en ligne ModaFashion<span
+                    class="badge bg-success ms-2"
                     >E-commerce</span
                   >
                 </h5>
                 <p class="card-text">
-                  Plateforme e-commerce complete avec un Système de paiement
-                  inttegré , gestion de stocks et interface d'administration.
+                  Plateforme e-commerce complète avec un système de paiement
+                  intégré, gestion de stocks et interface d'administration.
                 </p>
               </div>
             </div>
@@ -511,7 +333,7 @@
 
           <!-- Projet 2 -->
           <div class="col-12 col-md-4">
-            <div class="card projet-card h-100">
+            <div class="card h-100">
               <img
                 src="assets/images/img2.webp"
                 class="card-img-top"
@@ -519,13 +341,13 @@
               />
               <div class="card-body">
                 <h5 class="card-title">
-                  Application FitTracker<span class="badge bg-primary ms-1 mb-1"
+                  Application FitTracker<span class="badge bg-primary ms-2"
                     >Finance</span
                   >
                 </h5>
                 <p class="card-text">
                   Application mobile de suivi fitness avec GPS, statistiques
-                  detaillées et défis communautaires
+                  détaillées et défis communautaires
                 </p>
               </div>
             </div>
@@ -533,7 +355,7 @@
 
           <!-- Projet 3 -->
           <div class="col-12 col-md-4">
-            <div class="card projet-card h-100">
+            <div class="card h-100">
               <img
                 src="assets/images/img3.webp"
                 class="card-img-top"
@@ -542,7 +364,7 @@
               <div class="card-body">
                 <h5 class="card-title">
                   Système CRM TechCorp
-                  <span class="badge bg-warning text-dark">CRM</span>
+                  <span class="badge bg-warning text-dark ms-2">CRM</span>
                 </h5>
                 <p class="card-text">
                   Optimisation des ventes et gestion client efficace.
@@ -551,30 +373,9 @@
             </div>
           </div>
 
-          <!-- Projet 6 -->
-          <div class="col-12 col-md-4">
-            <div class="card projet-card h-100">
-              <img
-                src="assets/images/img6.webp"
-                class="card-img-top"
-                alt="Projet 6"
-              />
-              <div class="card-body">
-                <h5 class="card-title">
-                  Plateforme MediCare
-                  <span class="badge bg-secondary">Healthcare</span>
-                </h5>
-                <p class="card-text">
-                  Système de gestion hospitaliére avec prise de rendez-vous en
-                  ligne et dossiers medicaux électronique
-                </p>
-              </div>
-            </div>
-          </div>
-
           <!-- Projet 4 -->
           <div class="col-12 col-md-4">
-            <div class="card projet-card h-100">
+            <div class="card h-100">
               <img
                 src="assets/images/img4.webp"
                 class="card-img-top"
@@ -583,11 +384,11 @@
               <div class="card-body">
                 <h5 class="card-title">
                   Plateforme EduLearn
-                  <span class="badge bg-info text-dark">Éducation</span>
+                  <span class="badge bg-info text-dark ms-2">Éducation</span>
                 </h5>
                 <p class="card-text">
-                  Plateforme d'apprentissage en ligne avec cours vidéo , quiz
-                  interactive et suivi de progression.
+                  Plateforme d'apprentissage en ligne avec cours vidéo, quiz
+                  interactifs et suivi de progression.
                 </p>
               </div>
             </div>
@@ -595,7 +396,7 @@
 
           <!-- Projet 5 -->
           <div class="col-12 col-md-4">
-            <div class="card projet-card h-100">
+            <div class="card h-100">
               <img
                 src="assets/images/img5.webp"
                 class="card-img-top"
@@ -604,11 +405,32 @@
               <div class="card-body">
                 <h5 class="card-title">
                   Système RestaurantPro
-                  <span class="badge bg-danger">Restauration</span>
+                  <span class="badge bg-danger ms-2">Restauration</span>
                 </h5>
                 <p class="card-text">
-                  Systeme de point de vente pour restaurants avec gestion de
-                  commande , inventaire et rapports financiers.
+                  Système de point de vente pour restaurants avec gestion de
+                  commandes, inventaire et rapports financiers.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 6 -->
+          <div class="col-12 col-md-4">
+            <div class="card h-100">
+              <img
+                src="assets/images/img6.webp"
+                class="card-img-top"
+                alt="Projet 6"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Plateforme MediCare
+                  <span class="badge bg-secondary ms-2">Healthcare</span>
+                </h5>
+                <p class="card-text">
+                  Système de gestion hospitalière avec prise de rendez-vous en
+                  ligne et dossiers médicaux électroniques
                 </p>
               </div>
             </div>
@@ -616,10 +438,9 @@
         </div>
       </div>
     </section>
-    <!-- ----------------------------------------------------------------------------------------------------- -->
 
     <!-- Section FAQ -->
-    <section id="faq" class="py-5 bg-white">
+    <section id="faq" class="py-5">
       <div class="container">
         <h3 class="text-center mb-4">Questions Fréquentes</h3>
         <div class="accordion" id="faqAccordion">
@@ -703,34 +524,61 @@
         </div>
       </div>
     </section>
+
     <!-- Section Statistiques -->
-    <section class="statistiques">
-      <div class="stat-item blue">
-        <h2>150+</h2>
-        <p>Projets Réalisés</p>
-      </div>
-      <div class="stat-item green">
-        <h2>98%</h2>
-        <p>Clients Satisfaits</p>
-      </div>
-      <div class="stat-item yellow">
-        <h2>24/7</h2>
-        <p>Support Technique</p>
-      </div>
-      <div class="stat-item cyan">
-        <h2>10+</h2>
-        <p>Années d'Expérience</p>
+    <section class="py-5 bg-dark text-white">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-6 col-md-3 mb-4">
+            <div class="p-3 bg-primary rounded">
+              <h2 class="mb-0">150+</h2>
+              <p class="mb-0">Projets Réalisés</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <div class="p-3 bg-success rounded">
+              <h2 class="mb-0">98%</h2>
+              <p class="mb-0">Clients Satisfaits</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <div class="p-3 bg-warning rounded">
+              <h2 class="mb-0">24/7</h2>
+              <p class="mb-0">Support Technique</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 mb-4">
+            <div class="p-3 bg-info rounded">
+              <h2 class="mb-0">10+</h2>
+              <p class="mb-0">Années d'Expérience</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-left">
-        <p>TechSolutions</p>
-      </div>
-      <div class="footer-right">
-        <a href="# " class="foot p-1">Mentions légales</a>
-        <a href="# " class="foot p-1">Politique de confidentialité</a>
+    <footer class="py-4 bg-dark text-white">
+      <div class="container">
+        <div
+          class="d-flex flex-column flex-md-row justify-content-between align-items-center"
+        >
+          <div class="mb-3 mb-md-0">
+            <p class="mb-0">TechSolutions</p>
+          </div>
+          <div>
+            <a
+              href="#"
+              class="text-white me-3 border border-white rounded p-1 text-decoration-none"
+              >Mentions légales</a
+            >
+            <a
+              href="#"
+              class="text-white border border-white rounded p-1 text-decoration-none"
+              >Politique de confidentialité</a
+            >
+          </div>
+        </div>
       </div>
     </footer>
 
