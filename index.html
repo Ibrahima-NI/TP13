@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solutions Innovantes</title>
+    <link rel="stylesheet" href="assets/CSS/bootstrap.min.css" />
+    <style>
+      /* Section Bannière */
+      .banniere {
+        min-height: 400px; /* même hauteur sur tous les slides */
+        display: flex;
+        align-items: center;
+      }
+      .banniere-img {
+        width: 100%;
+        height: 400px; /* fixe une hauteur identique */
+        object-fit: cover; /* recadre automatiquement l’image */
+        border-radius: 10px; /* optionnel pour arrondir */
+      }
+      /* Section Services */
+      .nos-services h3 {
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .service-card {
+        border: 1px solid #eee;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      /* --- NAVBAR --- */
+      .brand-badge {
+        display: inline-block;
+        background-color: #0d6efd;
+        color: #ffffff;
+        padding: 4px 10px;
+        border-radius: 9999px;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 20px;
+      }
+
+      .brand-text {
+        color: #ffffff;
+        font-weight: 500;
+        font-size: 16px;
+        margin-left: 8px;
+      }
+
+      .navbar .nav-link {
+        color: rgba(255, 255, 255, 0.85);
+        padding: 8px 12px;
+        font-size: 14px;
+      }
+
+      .navbar .nav-link:hover,
+      .navbar .nav-link.active {
+        color: #ffffff;
+      }
+
+      /* --- BANDE D'ANNONCE --- */
+      .promo-alert {
+        background-color: #fff3cd; /* jaune très clair */
+        border: 1px solid #ffe8a1;
+        color: #2c2c2c;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 14px;
+      }
+      /* Image bannière avec coins arrondis */
+      .banniere-img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px; /* arrondi */
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* optionnel, pour un effet plus joli */
+      }
+
+      /* Ajuste les icônes du carousel */
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-size: 30px 30px;
+        filter: invert(1); /* icônes blanches */
+      }
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        top: 50%;
+        transform: translateY(-50%); /* centré verticalement */
+        width: 40px; /* largeur cliquable */
+      }
+      .badge {
+        font-size: 12px; /* petit texte */
+        padding: 3px 6px; /* petit padding */
+      }
+      /* Section Statistiques */
+      .statistiques {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: #1e1e1e; /* même fond que footer */
+        padding: 50px 20px;
+        color: #fff;
+        flex-wrap: wrap;
+      }
+
+      .stat-item {
+        text-align: center;
+        flex: 1;
+        min-width: 200px;
+        margin: 15px;
+      }
+
+      .stat-item h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 8px;
+        color: #fff;
+      }
+
+      /* Couleurs des stats */
+      .stat-item.blue h2 {
+        background: #1e90ff;
+      }
+      .stat-item.green h2 {
+        background: #28a745;
+      }
+      .stat-item.yellow h2 {
+        background: #ffc107;
+        color: #000;
+      }
+      .stat-item.cyan h2 {
+        background: #17a2b8;
+      }
+      /* FAQ */
+      .faq-box {
+        background: #ffffff;
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+      }
+      .faq-box:hover {
+        border-color: #0d6efd;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+      }
+      .faq-box h6 {
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #0d6efd;
+      }
+      .faq-box p {
+        margin: 0;
+        font-size: 14px;
+        color: #555;
+      }
+
+      /* Footer */
+      .footer {
+        background: #1e1e1e; /* même fond que statistiques */
+        color: #ccc;
+        padding: 20px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .footer-left {
+        font-size: 14px;
+      }
+
+      .footer-right a {
+        color: #ccc;
+        text-decoration: none;
+        margin-left: 15px;
+        font-size: 14px;
+      }
+
+      .footer-right a:hover {
+        text-decoration: underline;
+      }
+      .footer-right .foot {
+        border: 2px solid white;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ----------------------------------------------------------------------------------------------------- -->
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg py-2">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <span class="brand-badge">Tech</span>
+          <span class="brand-text">Solutions</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal"
+          aria-expanded="false"
+          aria-label="Menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projets">Projets</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ------------------------------------------ALERTE----------------------------------------------------------- -->
+    <div
+      class="alert alert-warning alert-dismissible fade show promo-alert mb-0"
+      role="alert"
+    >
+      <div class="container d-flex align-items-center">
+        <span class="me-2"
+          >🎉 <strong>Offre spéciale !</strong> Profitez de -20% sur tous nos
+          services jusqu’à la fin du mois.</span
+        >
+        <button
+          type="button"
+          class="btn-close ms-auto"
+          data-bs-dismiss="alert"
+          aria-label="Fermer"
+        ></button>
+      </div>
+    </div>
+    <!-- Bannière en carousel -->
+    <section
+      id="carouselBanniere"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="banniere py-5" style="background-color: #007bff">
+            <div class="container">
+              <div class="row align-items-center">
+                <!-- Texte -->
+                <div class="col-12 col-md-6 text-center text-md-start">
+                  <h2 class="titre-banniere text-white">
+                    Solutions Innovantes
+                  </h2>
+                  <p class="sous-titre text-white">
+                    Transformez votre entreprise avec nos technologies de pointe
+                  </p>
+                  <a href="#" class="btn btn-light btn-lg mt-3"
+                    >Découvrir nos services</a
+                  >
+                </div>
+                <!-- Image -->
+                <div class="col-12 col-md-6 text-center mt-4 mt-md-0">
+                  <img
+                    src="assets/images/bannier.webp"
+                    alt="Bannière"
+                    class="img-fluid banniere-img"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="banniere py-5" style="background-color: #28a745">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-12 col-md-6 text-center text-md-start">
+                  <h2 class="titre-banniere text-white">Expertise Confirmé</h2>
+                  <p class="sous-titre text-white">
+                    Plus de 10ans d'experience dans le devellopement web
+                  </p>
+                  <a href="#" class="btn btn-light btn-lg mt-3"
+                    >Voir nos réalisations</a
+                  >
+                </div>
+                <div class="col-12 col-md-6 text-center mt-4 mt-md-0">
+                  <img
+                    src="assets/images/img2.webp"
+                    alt="Projet 2"
+                    class="img-fluid banniere-img"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="banniere py-5" style="background-color: #17a2b8">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-12 col-md-6 text-center text-md-start">
+                  <h2 class="titre-banniere text-white">Support 24/7</h2>
+                  <p class="sous-titre text-white">
+                    Une equipe dedié pour vous accompagner à tout moment
+                  </p>
+                  <a href="#" class="btn btn-light btn-lg mt-3"
+                    >Nous contacter</a
+                  >
+                </div>
+                <div class="col-12 col-md-6 text-center mt-4 mt-md-0">
+                  <img
+                    src="assets/images/img3.webp"
+                    alt="Projet 3"
+                    class="img-fluid banniere-img"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Boutons de navigation -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselBanniere"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselBanniere"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+      <!-- Indicateurs -->
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselBanniere"
+          data-bs-slide-to="0"
+          class="active"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselBanniere"
+          data-bs-slide-to="1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselBanniere"
+          data-bs-slide-to="2"
+        ></button>
+      </div>
+
+      <!-- Controls -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselBanniere"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselBanniere"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </section>
+    <!-- ----------------------------------------------------------------------------------------------------- -->
+    <!-- Section Nos Services -->
+    <section class="nos-services py-5">
+      <div class="container text-center">
+        <h3 class="mb-4">Nos Services</h3>
+        <p class="text-muted mb-5">Des solutions adaptées à vos besoins</p>
+        <div class="row">
+          <!-- Développement Web -->
+          <div class="col-12 col-md-4">
+            <div class="card service-card h-100 p-3">
+              <h5 class="mb-2">
+                <span class="badge bg-primary text-light me-2">Web</span
+                >Développement Web
+              </h5>
+              <p>
+                Sites web modernes et responsive avec les dernières technologies
+              </p>
+              <div class="progress" style="height: 8px">
+                <div
+                  class="progress-bar bg-primary"
+                  role="progressbar"
+                  style="width: 95%"
+                  aria-valuenow="95"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <small>Expertise : 95%</small>
+            </div>
+          </div>
+
+          <!-- Applications Mobile -->
+          <div class="col-12 col-md-4">
+            <div class="card service-card h-100 p-3">
+              <h5 class="mb-2">
+                <span class="badge bg-success text-light me-2">Mobile</span>
+                Applications Mobile
+              </h5>
+              <p>Applications iOS et Android performantes et intuitives</p>
+              <div class="progress" style="height: 8px">
+                <div
+                  class="progress-bar bg-success"
+                  role="progressbar"
+                  style="width: 88%"
+                  aria-valuenow="88"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <small>Expertise : 88%</small>
+            </div>
+          </div>
+
+          <!-- Solutions Cloud -->
+          <div class="col-12 col-md-4">
+            <div class="card service-card h-100 p-3">
+              <h5 class="mb-2">
+                <span class="badge bg-warning text-light me-2">Cloud</span>
+                Solutions Cloud
+              </h5>
+              <p>Infrastructure cloud sécurisée et scalable</p>
+              <div class="progress" style="height: 8px">
+                <div
+                  class="progress-bar bg-warning"
+                  role="progressbar"
+                  style="width: 92%"
+                  aria-valuenow="92"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <small>Expertise : 92%</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ----------------------------------------------------------------------------------------------------- -->
+    <!-- Section Nos Réalisations -->
+    <section id="projets" class="py-5 bg-light">
+      <div class="container">
+        <h3 class="text-center mb-4">Nos Réalisations</h3>
+        <p class="text-muted text-center mb-5">
+          Découvrez quelques-uns de nos projets réussis.
+        </p>
+
+        <div class="row g-4">
+          <!-- Projet 1 -->
+          <div class="col-12 col-md-4">
+            <div class="card projet-card h-100">
+              <img
+                src="assets/images/bannier.webp"
+                class="card-img-top"
+                alt="Projet 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Boutique en ligne ModaFashion<span class="badge bg-success"
+                    >E-commerce</span
+                  >
+                </h5>
+                <p class="card-text">
+                  Plateforme e-commerce complete avec un Système de paiement
+                  inttegré , gestion de stocks et interface d'administration.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 2 -->
+          <div class="col-12 col-md-4">
+            <div class="card projet-card h-100">
+              <img
+                src="assets/images/img2.webp"
+                class="card-img-top"
+                alt="Projet 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Application FitTracker<span class="badge bg-primary ms-1 mb-1"
+                    >Finance</span
+                  >
+                </h5>
+                <p class="card-text">
+                  Application mobile de suivi fitness avec GPS, statistiques
+                  detaillées et défis communautaires
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 3 -->
+          <div class="col-12 col-md-4">
+            <div class="card projet-card h-100">
+              <img
+                src="assets/images/img3.webp"
+                class="card-img-top"
+                alt="Projet 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Système CRM TechCorp
+                  <span class="badge bg-warning text-dark">CRM</span>
+                </h5>
+                <p class="card-text">
+                  Optimisation des ventes et gestion client efficace.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 6 -->
+          <div class="col-12 col-md-4">
+            <div class="card projet-card h-100">
+              <img
+                src="assets/images/img6.webp"
+                class="card-img-top"
+                alt="Projet 6"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Plateforme MediCare
+                  <span class="badge bg-secondary">Healthcare</span>
+                </h5>
+                <p class="card-text">
+                  Système de gestion hospitaliére avec prise de rendez-vous en
+                  ligne et dossiers medicaux électronique
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 4 -->
+          <div class="col-12 col-md-4">
+            <div class="card projet-card h-100">
+              <img
+                src="assets/images/img4.webp"
+                class="card-img-top"
+                alt="Projet 4"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Plateforme EduLearn
+                  <span class="badge bg-info text-dark">Éducation</span>
+                </h5>
+                <p class="card-text">
+                  Plateforme d'apprentissage en ligne avec cours vidéo , quiz
+                  interactive et suivi de progression.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 5 -->
+          <div class="col-12 col-md-4">
+            <div class="card projet-card h-100">
+              <img
+                src="assets/images/img5.webp"
+                class="card-img-top"
+                alt="Projet 5"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  Système RestaurantPro
+                  <span class="badge bg-danger">Restauration</span>
+                </h5>
+                <p class="card-text">
+                  Systeme de point de vente pour restaurants avec gestion de
+                  commande , inventaire et rapports financiers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ----------------------------------------------------------------------------------------------------- -->
+
+    <!-- Section FAQ -->
+    <section id="faq" class="py-5 bg-white">
+      <div class="container">
+        <h3 class="text-center mb-4">Questions Fréquentes</h3>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Quel est votre délai de livraison ?
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingOne"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Le délai varie selon la complexité du projet. En moyenne, un
+                site web prend 2-3 semaines.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Proposez-vous une assistance ?
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingTwo"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Oui, nous proposons un support technique 24/7 selon le forfait
+                choisi.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Comment se déroule un projet ?
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingThree"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Le projet suit 3 étapes : analyse des besoins, développement,
+                livraison et maintenance.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section Statistiques -->
+    <section class="statistiques">
+      <div class="stat-item blue">
+        <h2>150+</h2>
+        <p>Projets Réalisés</p>
+      </div>
+      <div class="stat-item green">
+        <h2>98%</h2>
+        <p>Clients Satisfaits</p>
+      </div>
+      <div class="stat-item yellow">
+        <h2>24/7</h2>
+        <p>Support Technique</p>
+      </div>
+      <div class="stat-item cyan">
+        <h2>10+</h2>
+        <p>Années d'Expérience</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-left">
+        <p>TechSolutions</p>
+      </div>
+      <div class="footer-right">
+        <a href="# " class="foot p-1">Mentions légales</a>
+        <a href="# " class="foot p-1">Politique de confidentialité</a>
+      </div>
+    </footer>
+
+    <script src="assets/JS/bootstrap.min.js"></script>
+  </body>
+</html>
